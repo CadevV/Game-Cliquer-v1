@@ -167,9 +167,9 @@ function compraPowerUp(powerUp){
     if(jogador.bonus !== powerUp.aumento){
         if(jogador.click >= powerUp.valor){
             
-            powerUp.valor *= 2
- 
             jogador.click -= powerUp.valor
+
+            powerUp.valor *= 2
 
             jogador.bonus = powerUp.aumento
 
