@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --texto: white; 
+    --background: black;
+    --btnTrue: green;
+    --btnFalse: gray;
+    --indisponivel: red;
+}
+
+body{
+    background: var(--background);
+    color: var(--texto);
+}
+
+header{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    align-items: center;   
+}
+
+.informacoesClique{ 
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.informacoesClique div{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid;
+}
+
+.containerClique{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+
+.boxBtn{
+    display: flex;
+    margin: 20px auto;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.btns{
+    letter-spacing: 0.6px;
+    padding: 4px;
+    border: 1px solid;
+    border-radius: 5px;
+    color: var(--texto);
+    background: var(--background);
+    cursor: pointer;
+}
+
+#menuDebug{
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    border: 3px white double;
+    background: rgb(20, 20, 20);
+    flex-direction: column;
+}
+
+.compravel{
+    background: var(--btnTrue);
+    color: var(--background);
+}
+
+.naoCompravel{
+    background: var(--btnFalse);
+    color: var(--texto);
+}
+
+.indisponivel {
+    background: var(--indisponivel);
+}
+
+.containerMelhorias{
+    height: 100vh;
+}
+
+.melhorias{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    height: 200px;
+}
+
+.containerMelhorias div{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid;
+}
+
+footer{
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.show {
+    display: flex;
+}
