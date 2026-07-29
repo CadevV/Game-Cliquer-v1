@@ -1,6 +1,6 @@
 Game Clicker V1
 
-Meu primeiro projeto desenvolvido em JavaScript puro.
+projeto desenvolvido em JavaScript puro.
 
 Um jogo simples de cliques onde o jogador acumula pontos, compra melhorias e utiliza power ups para aumentar sua produção.
 
