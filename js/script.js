@@ -8,6 +8,8 @@ const level = document.querySelectorAll('.level')
 const btnUp = document.querySelectorAll('.btnUp')
 const btnPowerUp = document.querySelectorAll('.btnPowerUp')
 const infoClique = document.querySelector('#infoClique')
+const infoTempo = document.querySelector('#infoTempo')
+const infoTempoPowerUp = document.querySelector('#infoTempoPowerUp')
 
 const btnDebug = document.getElementById('debug')
 const menuDebug = document.getElementById('menuDebug')
@@ -106,7 +108,7 @@ const powerUp10x = {
 const powerUps = [
     powerUp2x,
     powerUp5x,
-    powerUp10x
+    powerUp10x,
 ]
 
 
@@ -148,6 +150,10 @@ function atualizarBotoes() {
     })
 }
 
+function poderClick(){
+    return jogador.multi * jogador.bonus
+}
+
 function comprarMulti(melhoria){
 
     if(jogador.click >= melhoria.valor){
@@ -175,8 +181,9 @@ function compraPowerUp(powerUp){
 
             powerUps.forEach(element =>{
                 btnPowerUp[element.lugar].classList.add('indisponivel')
+                btnPowerUp[element.lugar].disabled = true;
             })
-
+            
             atualizarTudo()
 
             setTimeout(() => {
@@ -184,6 +191,7 @@ function compraPowerUp(powerUp){
 
                 powerUps.forEach(element =>{
                     btnPowerUp[element.lugar].classList.remove('indisponivel')
+                    btnPowerUp[element.lugar].disabled = false;
                 })
 
                 atualizarTudo()
@@ -195,7 +203,7 @@ function compraPowerUp(powerUp){
 
 function adicionar(){
 
-    jogador.click += jogador.multi * jogador.bonus
+    jogador.click += poderClick()
 
     atualizarTudo()
 }
@@ -211,9 +219,11 @@ function ativarDebug(){
 }
 
 function remover(){
-    jogador.click--
+    if(jogador.click > 0){
+        jogador.click--
 
-    atualizarTudo()
+        atualizarTudo()
+    }
 }
 
 function resetar(){

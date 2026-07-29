@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador</title>
+    <title>Clicker</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
     <header>
-        <h1>Jogo de cliques wow</h1>
+        <h1>Generic Clicker</h1>
     </header>
 
     <main>
         <section class="informacoesClique">
-            <h1>Informaçoes</h1>
+            <h2>Informaçoes</h2>
 
             <div class="informacoes">
                 <div>
-                    <h2>Potencia do Clique <br> x<span id="infoClique">1</span></h2>
+                    <h3>Potencia do Clique <br> x<span id="infoClique">1</span></h3>
                 </div>
                 <div>
-                    <h2>Tempo jogado <br> <span id="infoTempo">00:00:00</span></h2>
+                    <h3>Tempo jogado <br> <span id="infoTempo">00:00:00</span></h3>
+                </div>
+                <div>
+                    <h3>Tempo powerUp <br> <span id="infoTempoPowerUp">00:00</span></h3>
                 </div>
             </div>
             
         </section>
 
         <section class="containerClique">
-            <h1>Cliques <span id="cliques">0</span></h1>
+            <h2>Cliques <span id="cliques">0</span></h2>
 
             <div class="boxBtn">
                 <button id="add" class="btns">Add</button>
@@ -50,38 +53,38 @@
         </section>
         
         <section class="containerMelhorias">
-            <h1>Melhorias</h1>
+            <h2>Melhorias</h2>
 
-            <h2>aumentar potencia do clique</h2>
+            <h3>aumentar potencia do clique</h3>
 
             <div class="melhorias">
                 <div>
-                    <h3>lv:<span class="level">1</span> Custo <span class="valor">10</span></h3>
+                    <h4>lv:<span class="level">1</span> Custo <span class="valor">10</span></h4>
                     <button class="btns btnUp">Aumentar +1</button>
                 </div>
 
                 <div>
-                    <h3>lv:<span class="level">1</span> Custo <span class="valor">50</span></h3>
+                    <h4>lv:<span class="level">1</span> Custo <span class="valor">50</span></h4>
                     <button class="btns btnUp">Aumentar +5</button>
                 </div>
 
                 <div>
-                    <h3>lv:<span class="level">1</span> Custo <span class="valor">100</span></h3>
+                    <h4>lv:<span class="level">1</span> Custo <span class="valor">100</span></h4>
                     <button class="btns btnUp">Aumentar +10</button>
                 </div>
 
                 <div>
-                    <h3>lv:<span class="level">1</span> Custo <span class="valor">250</span></h3>
+                    <h4>lv:<span class="level">1</span> Custo <span class="valor">250</span></h4>
                     <button class="btns btnUp">Aumentar +25</button>
                 </div>
 
                 <div>
-                    <h3>lv:<span class="level">1</span> Custo <span class="valor">500</span></h3>
+                    <h4>lv:<span class="level">1</span> Custo <span class="valor">500</span></h4>
                     <button class="btns btnUp">Aumentar +50</button>
                 </div>
 
                 <div>
-                    <h3>lv:<span class="level">1</span> Custo <span class="valor">1000</span></h3>
+                    <h4>lv:<span class="level">1</span> Custo <span class="valor">1000</span></h4>
                     <button class="btns btnUp">Aumentar +100</button>
                 </div>
             </div>
@@ -90,17 +93,17 @@
 
             <div class="melhorias">
                 <div>
-                    <h3>Custo <span class="valorPower">0</span></h3>
+                    <h4>Custo <span class="valorPower">0</span></h4>
                     <button class="btns btnPowerUp">2x Clique 1m</button>
                 </div>
 
                 <div>
-                    <h3>Custo <span class="valorPower">0</span></h3>
+                    <h4>Custo <span class="valorPower">0</span></h4>
                     <button class="btns btnPowerUp">5x Clique 1m</button>
                 </div>
 
                 <div>
-                    <h3>Custo <span class="valorPower">0</span></h3>
+                    <h4>Custo <span class="valorPower">0</span></h4>
                     <button class="btns btnPowerUp">10x Clique 1m</button>
                 </div>
             </div>
@@ -109,10 +112,10 @@
     </main>
 
     <footer>
-        <h3>
+        <h4>
             &copy Jogo Desenvolvido por CadevV 2026<br>
             Estudante M-tec desenvolvito Sistemas 1/3
-        </h3>
+        </h4>
     </footer>
 
     <script src="js/script.js"></script>
