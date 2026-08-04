@@ -8,6 +8,8 @@ const level = document.querySelectorAll('.level')
 const btnUp = document.querySelectorAll('.btnUp')
 const btnPowerUp = document.querySelectorAll('.btnPowerUp')
 const infoClique = document.querySelector('#infoClique')
+const infoTotalBruto = document.querySelector('#infoTotalBruto')
+const infoTotalLiquido = document.querySelector('#infoTotalLiquido')
 const infoTempo = document.querySelector('#infoTempo')
 const infoTempoPowerUp = document.querySelector('#infoTempoPowerUp')
 
@@ -26,7 +28,9 @@ const debugs = [
 const jogador = {
     click: 0,
     multi: 1,
-    bonus: 1
+    bonus: 1,
+    clicktotalliquido: 0,
+    clicktotalbruto: 0
 }
 
 const melhoria1x = {
@@ -115,7 +119,9 @@ const powerUps = [
 function atualizarTudo(){
 
     infoClique.innerHTML = jogador.multi * jogador.bonus
-    
+    infoTotalBruto.innerHTML = jogador.clicktotalbruto
+    infoTotalLiquido.innerHTML = jogador.clicktotalliquido
+
     contador.innerHTML = jogador.click
 
     melhorias.forEach(element => {
@@ -169,6 +175,15 @@ function comprarMulti(melhoria){
     }
 }
 
+function tempoPowerUp(powerUp){
+    setInterval(() => {
+        let tempo = powerUp.duracao / 1000
+        let minutos = Math.floor(tempo / 60)
+        let segundos = tempo % 60
+        infoTempoPowerUp.innerHTML = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`
+    }, 1000)
+}
+
 function compraPowerUp(powerUp){
     if(jogador.bonus !== powerUp.aumento){
         if(jogador.click >= powerUp.valor){
@@ -183,7 +198,11 @@ function compraPowerUp(powerUp){
                 btnPowerUp[element.lugar].classList.add('indisponivel')
                 btnPowerUp[element.lugar].disabled = true;
             })
-            
+
+            powerUps.forEach(element =>{
+                tempoPowerUp(powerUp)
+            })  
+
             atualizarTudo()
 
             setTimeout(() => {
@@ -205,6 +224,8 @@ function adicionar(){
 
     jogador.click += poderClick()
 
+    jogador.clicktotalliquido++
+    jogador.clicktotalbruto += poderClick()
     atualizarTudo()
 }
 
